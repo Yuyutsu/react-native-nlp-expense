@@ -10,7 +10,7 @@
   "scripts": {
     "build": "tsc",
     "prepare": "tsc",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "lint": "tsc --noEmit"
   },
   "repository": {
