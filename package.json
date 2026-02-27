@@ -2,27 +2,91 @@
   "name": "react-native-nlp-expense",
   "version": "1.0.0",
   "description": "Lightweight offline rule-based NLP parser for React Native expense input.",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "author": "Yuyutsu",
+
+  "type": "module",
+
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+
   "files": [
-    "lib"
+    "dist"
   ],
+
+  "react-native": "src/index.ts",
+
+  "sideEffects": false,
+
   "scripts": {
     "build": "tsc",
-    "prepare": "tsc",
-    "test": "jest --passWithNoTests",
-    "lint": "tsc --noEmit"
+    "prepare": "npm run build",
+    "lint": "tsc --noEmit",
+    "test": "jest --passWithNoTests"
   },
+
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-native": ">=0.72.0"
+  },
+
+  "dependencies": {
+    "chrono-node": "^2.9.0"
+  },
+
+  "devDependencies": {
+    "typescript": "^5.3.0",
+
+    "react": "18.3.1",
+    "react-native": "0.76.5",
+    "react-test-renderer": "18.3.1",
+
+    "jest": "^29.7.0",
+    "babel-jest": "^29.7.0",
+    "ts-jest": "^29.4.6",
+    "@types/jest": "^29.5.0",
+
+    "@testing-library/react-native": "^12.9.0",
+
+    "@types/react": "^18.3.0",
+    "@types/react-native": "^0.73.0"
+  },
+
+  "jest": {
+    "preset": "react-native",
+    "testMatch": [
+      "**/__tests__/**/*.test.(ts|tsx)"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(react-native|@react-native|@testing-library)/)"
+    ]
+  },
+
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Yuyutsu/ReactNativeNLPDatePicker.git"
+    "url": "https://github.com/Yuyutsu/react-native-nlp-expense.git"
   },
-  "homepage": "https://github.com/Yuyutsu/ReactNativeNLPDatePicker#readme",
+
+  "homepage": "https://github.com/Yuyutsu/react-native-nlp-expense#readme",
+
   "bugs": {
-    "url": "https://github.com/Yuyutsu/ReactNativeNLPDatePicker/issues"
+    "url": "https://github.com/Yuyutsu/react-native-nlp-expense/issues"
   },
-  "author": "Yuyutsu",
-  "license": "MIT",
+
   "keywords": [
     "react-native",
     "nlp",
@@ -31,58 +95,8 @@
     "typescript",
     "offline"
   ],
-  "react-native": "src/index.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    }
-  },
-  "sideEffects": false,
-  "peerDependencies": {
-    "react": ">=18.0.0",
-    "react-native": ">=0.72.0"
-  },
-  "dependencies": {
-    "chrono-node": "^2.9.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.24.0",
-    "@babel/preset-env": "^7.24.0",
-    "@babel/preset-react": "^7.24.0",
-    "@babel/preset-typescript": "^7.24.0",
-    "@testing-library/react-native": "^12.4.0",
-    "@types/jest": "^29.5.0",
-    "@types/react": "^18.3.0",
-    "@types/react-native": "^0.73.0",
-    "@typescript-eslint/eslint-plugin": "^8.56.1",
-    "@typescript-eslint/parser": "^8.56.1",
-    "babel-jest": "^29.7.0",
-    "eslint": "^10.0.2",
-    "jest": "^29.7.0",
-    "react": "^18.3.1",
-    "react-native": "^0.76.5",
-    "react-test-renderer": "^18.3.1",
-    "ts-jest": "^29.4.6",
-    "typescript": "^5.3.0"
-  },
+
   "engines": {
     "node": ">=18"
-  },
-  "jest": {
-    "preset": "react-native",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json"
-    ],
-    "testMatch": [
-      "**/__tests__/**/*.test.(ts|tsx)"
-    ],
-    "transformIgnorePatterns": [
-      "node_modules/(?!(react-native|@react-native|@testing-library)/)"
-    ]
   }
 }
