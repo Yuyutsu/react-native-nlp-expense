@@ -19,7 +19,8 @@
   "react-native": "src/index.ts",
   "sideEffects": false,
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && npm run transpile-chrono",
+    "transpile-chrono": "babel node_modules/chrono-node/dist/esm --out-dir dist/vendor/chrono-node --extensions ".js"",
     "prepare": "npm run build",
     "lint": "tsc --noEmit",
     "test": "jest --passWithNoTests"
