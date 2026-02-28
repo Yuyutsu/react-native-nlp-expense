@@ -20,8 +20,9 @@
   "sideEffects": false,
   "scripts": {
     "build": "tsc && npm run transpile-chrono",
-    "transpile-chrono": "babel node_modules/chrono-node/dist/esm --out-dir dist/vendor/chrono-node --extensions .js",
+    "transpile-chrono": "npx babel node_modules/chrono-node/dist/esm --out-dir dist/vendor/chrono-node --extensions \".js\"",
     "prepare": "npm run build",
+    "prepack": "npm run transpile-chrono",
     "lint": "tsc --noEmit",
     "test": "jest --passWithNoTests"
   },
@@ -33,6 +34,9 @@
     "chrono-node": "^2.9.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.25.0",
+    "@babel/core": "^7.25.0",
+    "@babel/preset-env": "^7.25.0",
     "@babel/plugin-transform-export-namespace-from": "^7.27.1",
     "@testing-library/react-native": "^12.9.0",
     "@types/jest": "^29.5.0",
