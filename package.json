@@ -1,6 +1,6 @@
 {
   "name": "react-native-nlp-expense",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Lightweight offline rule-based NLP parser for React Native expense input.",
   "license": "MIT",
   "author": "Yuyutsu",
